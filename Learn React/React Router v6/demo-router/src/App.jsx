@@ -2,6 +2,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { BookList } from "./pages/BookList";
 import { Book } from "./pages/Book";
+import { NewBook } from "./pages/NewBook";
+import { NotFound } from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -19,7 +21,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<BookList />} />
-        <Route path="/books/:id/:name" element={<Book />} />
+        {/*Pass param on url*/}
+        <Route path="/books/:id" element={<Book />} />
+        {/*Notice here, The two url is the same in lower react router dom.
+        But in react route v6, these two are diffrent.*/}
+        <Route path="/books/new" element={<NewBook />} />
+        <Route path="*" element={<NotFound />} />;
       </Routes>
     </>
   );

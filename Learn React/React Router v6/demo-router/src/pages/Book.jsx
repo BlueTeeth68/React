@@ -5,9 +5,7 @@ export const Book = () => {
   const { id, name } = useParams();
   return (
     <>
-      <h1>Book {id}</h1>
-      <h2>Book name: {name}</h2>
-      <Link to="/">Home</Link>
+      <h2>Book {id}</h2>
     </>
   );
 };
